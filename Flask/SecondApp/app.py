@@ -6,11 +6,13 @@ app = Flask("NewApp")
 def myform():
 	return render_template('basic.html')
 
-@app.route('/data', methods=['GET'])
+@app.route('/data', methods=['POST'])
 def mydata():
-	if request.method == 'GET':
-		data = request.args.get('x')
+	if request.method == 'POST':
+		data = request.form.get('x')
+	else:
+		pass
 
-	return data + "is Awesome"
+	return data + " is Awesome"
 
 app.run(port=5555, debug=True)
