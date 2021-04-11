@@ -11,6 +11,6 @@ def mydata():
 	if request.method == 'GET':
 		data = request.args.get('x')
 
-	return data
+	return data + "is Awesome"
 
 app.run(port=5555, debug=True)
