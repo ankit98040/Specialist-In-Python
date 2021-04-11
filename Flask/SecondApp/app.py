@@ -15,4 +15,9 @@ def mydata():
 
 	return data + " is Awesome"
 
+#dynamic route
+@app.route('/name/<y>')
+def name(y):
+	return y.upper()
+
 app.run(port=5555, debug=True)
